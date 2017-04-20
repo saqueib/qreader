@@ -1,0 +1,28 @@
+// Header styles
+header {
+  position: fixed;
+  width: calc(98% - #{$sidebar-width});
+  padding: 0.45em 1em;
+  background-color: lighten($gray, 8);
+  z-index: 999;
+  box-shadow:.5em 1em 1.5em rgba($white, 0.7);
+
+  &.collapse {
+    width: calc(98% - #{$sidebar-min-width});
+  }
+
+  @media screen and (max-width: 768px) {
+    &.collapse {
+      width: calc(96% - #{$sidebar-min-width});
+    }
+  }
+
+  .block-input {
+    width: 100%;
+  }
+}
+
+// search suggestions active state
+.el-autocomplete-suggestion li:active{
+  background-color: lighten($primary-color, 40);
+}

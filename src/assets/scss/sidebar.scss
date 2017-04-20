@@ -1,0 +1,150 @@
+// Sidebar styles
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: $sidebar-width;
+  transition: width .3s;
+  background-color: $sidebar-background-color;
+  overflow: auto;
+  overflow-x: hidden;
+  padding-bottom: 2.4em;
+
+  .el-menu {
+    &.el-menu--dark {
+      background-color: transparent
+    }
+
+    .el-menu-item {
+      height: 2.3rem;
+      line-height: 2.5rem;
+      color: rgba($white, 0.6);
+      user-select: none;
+
+      i, img {
+        opacity: 0.3;
+      }
+
+      img {
+        margin-right: 10px;
+        vertical-align: -2px;
+        filter: grayscale(100)
+      }
+
+      &.is-active, &:hover {
+        i, img { opacity: 1; filter: grayscale(0) }
+        color: $white;
+        background-color: lighten($primary-color, 10)
+      }
+
+      &:hover {
+        background-color: lighten($primary-color, 5);
+        color: $white;
+      }
+    }
+
+    .fav-count {
+      float: right;
+      sup {
+        border: none;
+        margin-top: 0.8em
+      }
+    }
+  }
+
+  .copyright {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 1em;
+    font-size: .76em;
+    padding-left: 1em;
+    color: $gray;
+    width: $sidebar-width - 2rem;
+    opacity: .5;
+
+    a {
+      color: $white;
+    }
+
+    .collapse-btn {
+      margin-right: 1em;
+      width: 16px;
+      height: 16px;
+      background-color: lighten($primary-color, 45);
+      color: darken($primary-color, 10);
+      border-radius: 50%;
+      display: inline-block;
+      text-align: left;
+
+      &:hover {
+        background-color: lighten($primary-color, 30);
+      }
+    }
+  }
+}
+
+@mixin collapse {
+  width: $sidebar-min-width;
+
+  .brand-name, .el-menu-item-group__title {
+    display: none;
+  }
+  .el-menu-item {
+    span { display: none}
+    padding-left: 17px!important;
+    i { opacity: 1 };
+
+    .fav-count {
+      float: none;
+      sup {
+        border: none;
+        margin-top: -1em;
+        margin-left: -1.8em;
+      }
+    }
+  }
+
+  .toggle {
+    transform: rotate(180deg);
+  }
+
+  .copyright {
+    padding-left: 4px;
+
+    .by {
+      display: none;
+    }
+  }
+}
+
+.sidebar.collapse {
+  @include collapse;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    @include collapse;
+  }
+}
+
+.brand {
+  font-size: 1.3rem;
+  margin: 0;
+  padding: .6rem 1rem;
+  white-space: nowrap;
+  background-color: darken(#d9c1bf, 60);
+  margin-bottom: .5em;
+
+  .brand-primary {
+    color: lighten($primary-color, 40)
+  }
+
+  svg {
+    width: 1rem;
+    fill: lighten($primary-color, 20)
+  }
+
+  a {
+    color: $white!important;
+  }
+}

@@ -1,0 +1,45 @@
+// Colors
+$primary-color:             #583931;
+$secondary-color:           #565656;
+
+// - White
+$white:                     #FFFFFF;
+
+// - Gray
+$gray:                      #D3DCE6;
+
+// - Black
+$black:                     #1F2D3D;
+
+// - Selection
+$selection-color:                 $white; // inherit;
+$selection-background:            $primary-color;
+
+// - Link
+$link-color:                      darken($primary-color, 20); // inherit;
+$link-decoration:                 none;
+$link-hover-color:                darken($primary-color, 10); // inherit;
+$link-hover-decoration:           none;
+
+// - HTML
+// $html-color:                   $white;
+$html-background:                 $white;
+
+// - Body
+$body-color:                      lighten($black, 20);
+$body-background:                 $white;
+$body-font-family:                'Avenir', Helvetica, Arial, sans-serif;
+
+// - Sidebar
+$sidebar-width:                   14rem;
+$sidebar-min-width:               3rem;
+$sidebar-sub-width:               5rem;
+$sidebar-item-height:             $sidebar-min-width;
+$sidebar-enable-arrow:            true;
+$sidebar-enable-radius:           false;
+$sidebar-background-color:        #573932;
+
+// - Content
+$content-margin:                  .3125rem;
+$content-color:                   darken($black, 20);
+$content-background:              darken($white, 10);
