@@ -94,7 +94,7 @@
             });
         },
         deleteChannel(url) {
-            this.$confirm( this.channel.channel.title + ' channel will permanently deleteted?', 'Confirm Delete', {
+            this.$confirm( this.channel.channel.title + ' channel will permanently deleted?', 'Confirm Delete', {
               confirmButtonText: 'Delete it',
               cancelButtonText: 'Cancel',
               type: 'warning',
